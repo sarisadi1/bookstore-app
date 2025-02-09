@@ -1,0 +1,9 @@
+com.bookstore
+com.bookstore.api
+com.bookstore.business
+com.bookstore.configs
+com.bookstore.controllers
+com.bookstore.data
+com.bookstore.data.entity
+com.bookstore.data.repository
+com.bookstore.models

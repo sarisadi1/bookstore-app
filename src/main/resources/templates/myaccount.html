@@ -1,0 +1,75 @@
+<html xmmlns:th="http:///www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="layouts/defaultTemplate" xmlns:xmmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.w3.org/1999/xhtml">
+
+<!-- Sign up page content -->
+<div layout:fragment="content">
+	<div th:if="${sessionInfo != null && userModel != null}">
+		<div class="container body-content  py-5">
+			<div th:object="${userModel}">
+				<h2 class="form-signin-heading">Account details for: <span th:text="*{userName}"></span></h2>
+				<br />
+
+				<!-- User name-->
+				<p>
+					<span class="col-sm-3 text-right">User Name</span>
+					<span class="col-sm-9 text-left" th:text="*{userName}">User name</span>
+				</p>
+				<br />
+
+				<!-- Password -->
+				<p>
+					<span class="col-sm-3 text-right">Password</span>
+					<span class="col-sm-9 text-left">********</span>
+				</p>
+				<br />
+
+				<!-- First name -->
+				<p>
+					<span class="col-sm-3 text-right">First Name</span>
+					<span class="col-sm-9 text-left" th:text="*{firstName}">First Name</span>
+				</p>
+				<br />
+
+				<!-- Last name -->
+				<p>
+					<span class="col-sm-3 text-right">Last Name</span>
+					<span class="col-sm-9 text-left" th:text="*{lastName}">Last Name</span>
+				</p>
+				<br />
+
+				<!-- Email -->
+				<p>
+					<span class="col-sm-3 text-right">Email</span>
+					<span class="col-sm-9 text-left" th:text="*{email}">Email</span>
+				</p>
+				<br />
+
+				<!-- Phone -->
+				<p>
+					<span class="col-sm-3 text-right">Phone</span>
+					<span class="col-sm-9 text-left" th:text="*{phone}">Phone</span>
+				</p>
+				<br />
+
+				<!-- Edit button-->
+				<br />
+				<div class="container-fluid">
+					<!-- Nav disguised as button to go to page.-->
+					<a class="btn btn-lg btn-primary btn-block" th:href="@{/myaccount/edit}">Edit Details</a>
+				</div>
+				<br />
+				<!-- Delete button-->
+				<div class="container-fluid">
+					<!-- Nav disguised as button to go to page.-->
+					<a class="btn btn-lg btn-primary btn-block" th:href="@{/myaccount/delete}">Delete Account</a>
+				</div>
+				<br />
+			</div>
+
+		</div>
+	</div>
+
+</div>
+
+</html>

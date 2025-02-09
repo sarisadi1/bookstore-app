@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="DEBUG"> <!-- Change to DEBUG to see detailed logs -->
+    <Appenders>
+        <!-- Console appender -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n"/>
+        </Console>
+
+        <!-- File appender -->
+        <File name="File" fileName="logs/application.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n"/>
+        </File>
+
+        <!-- JDBC appender -->
+        <JDBC name="DatabaseAppender" tableName="application_logs">
+            <DataSource jndiName="java:/comp/env/jdbc/bookstore"/>
+            <Column name="event_date" pattern="%d{yyyy-MM-dd HH:mm:ss}"/>
+            <Column name="log_level" pattern="%p"/>
+            <Column name="logger" pattern="%c"/>
+            <Column name="message" pattern="%m"/>
+            <Column name="exception" pattern="%ex{full}"/>
+        </JDBC>
+
+        <!-- Loggly Appender -->
+<!--        <Socket name="LogglyAppender" host="logs-01.loggly.com" port="514">-->
+<!--            <JsonLayout compact="true" eventEol="true">-->
+<!--                <KeyValuePair key="token" value="YOUR-LOGGLY-TOKEN"/>-->
+<!--            </JsonLayout>-->
+<!--        </Socket>-->
+    </Appenders>
+
+    <Loggers>
+        <!-- Application loggers -->
+        <Logger name="com.example" level="debug" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="File"/>
+            <AppenderRef ref="DatabaseAppender"/>
+<!--            <AppenderRef ref="LogglyAppender"/>-->
+        </Logger>
+
+        <!-- Root logger -->
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="File"/>
+            <AppenderRef ref="DatabaseAppender"/>
+<!--            <AppenderRef ref="LogglyAppender"/>-->
+        </Root>
+    </Loggers>
+</Configuration>

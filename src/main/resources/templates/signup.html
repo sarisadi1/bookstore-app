@@ -1,0 +1,66 @@
+<html xmmlns:th="http:///www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="layouts/defaultTemplate" xmlns:xmmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.w3.org/1999/xhtml">
+
+<!-- Sign up page content -->
+<div layout:fragment="content">
+	<div class="container body-content">
+		<form class="form-signin" action="#" th:action="@{/signUp/doSignUp}" th:object="${signUpModel}" method="post">
+			<h2 class="form-signin-heading">Please fill in the User details</h2>
+
+			<!-- User name-->
+			<label for="inputUserid" class="sr-only">User Name</label>
+			<input id="inputUserid" type="text" th:field="*{userName}" class="form-control" placeholder="User Name"
+				autofocus>
+			<label th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}"
+				class="alert alert-warning alert-text" role="alert">User Name Error</label>
+			<br />
+
+			<!-- Password -->
+			<label for="inputPassword" class="sr-only">Password</label>
+			<input id="inputPassword" type="password" th:field="*{password}" class="form-control"
+				placeholder="Password">
+			<label th:if="${#fields.hasErrors('password')}" th:errors="*{password}"
+				class="alert alert-warning alert-text " role="alert">Password Error</label>
+			<br />
+
+			<!-- First name -->
+			<label for="inputFirstName" class="sr-only">First Name</label>
+			<input id="inputFirstName" type="text" th:field="*{firstName}" class="form-control" placeholder="First Name"
+				autofocus>
+			<label th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"
+				class="alert alert-warning alert-text" role="alert">First Name Error</label>
+			<br />
+
+			<!-- Last name -->
+			<label for="inputLastName" class="sr-only">Last Name</label>
+			<input id="inputLastName" type="text" th:field="*{lastName}" class="form-control" placeholder="Last Name"
+				autofocus>
+			<label th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"
+				class="alert alert-warning alert-text" role="alert">Last Name Error</label>
+			<br />
+
+			<!-- Email -->
+			<label for="inputEmail" class="sr-only">Email</label>
+			<input id="inputEmail" type="email" th:field="*{email}" class="form-control" placeholder="Email" autofocus>
+			<label th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="alert alert-warning alert-text"
+				role="alert">Email Error</label>
+			<br />
+
+			<!-- Phone -->
+			<label for="inputPhone" class="sr-only">Phone</label>
+			<input id="inputPhone" type="tel" th:field="*{phone}" class="form-control" placeholder="Phone"
+				autofocus>
+			<label th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}" class="alert alert-warning alert-text"
+				role="alert">Phone Error</label>
+			<br />
+
+			<!-- Signup button-->
+			<button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+			<br/>
+		</form>
+
+	</div>
+</div>
+
+</html>

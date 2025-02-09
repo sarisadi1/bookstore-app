@@ -1,0 +1,52 @@
+
+/*Background for the body*/
+.body-content {
+	background-color: #1d2a35; /* Green */	
+	color: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* Specify background color, font, etc. for whole page. */
+body {
+    background-color: #38444d;
+    font-family: 'Raleway', sans-serif;
+    font-size: large;
+    color: #ddd;
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-align: center;
+}
+
+.footer-content{
+	background-color: #1d2a35;
+	font-size: medium;
+}
+
+.alert-text{
+	font-size: small;
+}
+
+.bg-cell{
+	background-color: #38444d;
+}
+
+.form-label{
+	text-align: left;
+	font-size: small;
+}
+
+.btn-transparent{
+	background: none;
+	font-family: 'Raleway', sans-serif;
+	font-size: large;
+	color: #9d9d9d;
+	margin: 0px;
+}
+.btn-transparent:hover{
+	color: #fff;
+}

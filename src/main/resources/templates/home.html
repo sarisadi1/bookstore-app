@@ -1,0 +1,13 @@
+<html xmmlns:th="http:///www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="layouts/defaultTemplate" xmlns:xmmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.w3.org/1999/xhtml">
+	<!-- Homem page content -->
+	<div layout:fragment="content">
+		<div class="container-fluid body-content text-center">
+		  <h2 class="margin">Welcome to Book Store </h2>
+		  <h4 class="margin">Your one stop market for all books</h4>
+		  <img th:src="@{/images/bookstore.jpg}" class="img-responsive img-circle margin" style="display:inline" alt="Bookstore" width="350" height="350">
+		  <h4>Please Sign in to continue</h4>
+		</div>
+	</div>	
+</html>

@@ -1,0 +1,35 @@
+<html xmmlns:th="http:///www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="layouts/defaultTemplate" xmlns:xmmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.w3.org/1999/xhtml">
+
+	<!-- Login page content -->
+	<div layout:fragment="content">
+	<div class="container body-content">
+		<form class="form-signin" action="#" th:action="@{/login}" method="post">
+			<h2 class="form-signin-heading">Please sign in</h2>
+			<!-- User name-->
+			<label for="username" class="sr-only">User Name</label>
+			<input id="username" name="username" type="text"  class="form-control" placeholder="User Name" autofocus required>
+			
+			<label th:if="${loginError != null}" th:text="${loginError}"
+				class="alert alert-warning alert-text" role="alert">User Name Error</label>
+			
+			<br />
+
+			<!-- Password -->
+			<label for="password" class="sr-only">Password</label>
+			<input id="password" name="password" type="password"  class="form-control" placeholder="Password" required>
+			<!-- 
+			<label th:if="${#fields.hasErrors('password')}" th:errors="*{password}"
+				class="alert alert-warning alert-text " role="alert">Password Error</label>
+			-->
+			
+			<br />			
+			
+			<!-- Login button-->
+			<button class="btn btn-lg btn-primary btn-block" type="submit">Sign In</button>
+		</form>
+	</div>
+</div>
+
+</html>

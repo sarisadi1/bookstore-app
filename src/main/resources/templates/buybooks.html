@@ -1,0 +1,61 @@
+<html xmmlns:th="http:///www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="layouts/defaultTemplate" xmlns:xmmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.w3.org/1999/xhtml">
+<!-- All books page content -->
+<div layout:fragment="content">
+	<div class="container body-content">
+		<h2>
+			Purchasable Books for user: <span th:text="${sessionInfo.getUserName()}"></span>
+		</h2>
+		<!-- Books in the DB-->
+		<div class="panel panel-primary">
+			<div class="panel-heading ">Buy Books</div>
+			<div class="panel-body bg-cell">
+				<table style="width: 75%;">
+					<thead th:if="${not bookList.empty}">
+						<tr>
+							<th style="text-align: center;">Book Id</th>
+							<th style="text-align: center;">Book Name</th>
+							<th style="text-align: center;">Author</th>
+							<th style="text-align: center;">Price</th>
+							<th style="text-align: center;">Qantity</th>
+							<th style="text-align: center;"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:if="${bookList.empty}">
+							<td style="text-align: center;" colspan="4">No Books Available</td>
+						</tr>
+						<tr th:each="book : ${bookList}">
+							<td style="text-align: center;">
+								<h5 th:text="${book.bookId}">000001</h5>
+							</td>
+							<td style="text-align: center;">
+								<h5 th:text="${book.name}">Book 1</h5>
+							</td>
+							<td style="text-align: center;">
+								<h5 th:text="${book.author}">Author 1</h5>
+							</td>
+							<td style="text-align: center;">
+								<h5 th:text="${book.price}">1.00</h5>
+							</td>
+							<td style="text-align: center;">
+								<h5 th:text="${book.quantity}">1</h5>
+							</td>
+							<td style="text-align: center;">
+								<!-- TODO: Add to cart will be implemented later-->
+								<div class="container-fluid">
+									<!-- Nav disguised as button to go to page.-->
+									<a class="btn btn-info navbar-right margin-lg" href="#">Add to Cart</a>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<br />
+			</div>
+		</div>
+	</div> <!-- container-fluid-->
+</div>
+
+</html>

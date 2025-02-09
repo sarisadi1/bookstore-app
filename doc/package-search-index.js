@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.bookstore"},{"l":"com.bookstore.api"},{"l":"com.bookstore.business"},{"l":"com.bookstore.configs"},{"l":"com.bookstore.controllers"},{"l":"com.bookstore.data"},{"l":"com.bookstore.data.entity"},{"l":"com.bookstore.data.repository"},{"l":"com.bookstore.models"}];updateSearchResults();
