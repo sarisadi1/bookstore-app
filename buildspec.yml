@@ -5,6 +5,8 @@ phases:
       java: 21
   build:
     commands:
+      - export JAVA_HOME="/usr/lib/jvm/java-21-amazon-corretto"
+      - export PATH=$JAVA_HOME/bin:$PATH
       - echo Packaging JAR file...
       - mvn clean package
   post_build:
