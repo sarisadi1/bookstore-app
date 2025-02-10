@@ -2,7 +2,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      java: corretto17
+      java: corretto11
   build:
     commands:
       - export JAVA_HOME="/usr/lib/jvm/java-21-amazon-corretto"
